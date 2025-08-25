@@ -3,16 +3,17 @@ import NoteCard from "../NoteCard/NoteCard";
 
 interface NoteCardListProps {
   notes: Note[];
+  onDelete: (noteId: string) => void;
 }
 
-export default function NoteCardList({ notes }: NoteCardListProps) {
+export default function NoteCardList({ notes, onDelete }: NoteCardListProps) {
   return (
-    <div>
+    <ul>
       {notes.map((note) => (
-        <div>
-          <NoteCard note={note} />
-        </div>
+        <li key={note.id}>
+          <NoteCard note={note} onDelete={onDelete} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

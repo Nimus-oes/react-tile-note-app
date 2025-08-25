@@ -1,8 +1,7 @@
 export interface Note {
   id: string;
-  title: string;
-  content: string;
-  createdAt: string;
+  text: string;
+  createdAt: number;
   isArchived: boolean;
   isFavorite: boolean;
 }

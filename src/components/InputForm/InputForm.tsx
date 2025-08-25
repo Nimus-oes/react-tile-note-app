@@ -1,0 +1,38 @@
+import type { Note } from "../../types";
+import { v4 as uuidv4 } from "uuid";
+
+interface InputFormProps {
+  onAdd: (noteToAdd: Note) => void;
+}
+
+export default function InputForm({ onAdd }: InputFormProps) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const rawText = formData.get("text");
+    const text = typeof rawText === "string" ? rawText.trim() : "";
+
+    if (!text) {
+      e.currentTarget.reset();
+      return;
+    }
+
+    onAdd({
+      id: uuidv4(),
+      text,
+      createdAt: Date.now(),
+      isArchived: false,
+      isFavorite: false,
+    });
+
+    e.currentTarget.reset();
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input name="text" />
+      <button>Add</button>
+    </form>
+  );
+}

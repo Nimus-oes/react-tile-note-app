@@ -2,13 +2,19 @@ import type { Note } from "../../types";
 
 interface NoteCardProps {
   note: Note;
+  onDelete: (noteId: string) => void;
 }
 
-export default function NoteCard({ note }: NoteCardProps) {
+export default function NoteCard({ note, onDelete }: NoteCardProps) {
+  const handleDelete = () => {
+    onDelete(note.id);
+  };
+
   return (
-    <div>
-      <h1>{note.title}</h1>
-      <h3>{note.content}</h3>
-    </div>
+    <>
+      <h1>{note.text}</h1>
+      <p>{note.createdAt}</p>
+      <button onClick={handleDelete}>🗑️</button>
+    </>
   );
 }
