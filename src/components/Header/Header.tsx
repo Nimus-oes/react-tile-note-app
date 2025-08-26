@@ -1,3 +1,4 @@
+import { useDarkTheme } from "../../context/DarkThemeProvider";
 import type { Filter, Sorter } from "../../types";
 import styles from "./Header.module.css";
 
@@ -22,6 +23,8 @@ export default function Header({
     onSorterChange(sorter === "asc" ? "desc" : "asc");
   };
 
+  const { isDark, toggleDarkTheme } = useDarkTheme();
+
   return (
     <header className={styles.container}>
       <div>TileNote</div>
@@ -32,7 +35,9 @@ export default function Header({
         <button onClick={handleFilterChange} className={styles.favBtn}>
           {filter === "all" ? "⭐️" : "All"}
         </button>
-        <button className={styles.themeBtn}>🌙</button>
+        <button onClick={toggleDarkTheme} className={styles.themeBtn}>
+          {isDark ? "☀️" : "🌙"}
+        </button>
       </div>
     </header>
   );

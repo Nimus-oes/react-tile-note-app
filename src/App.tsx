@@ -4,6 +4,7 @@ import type { Note, Filter, Sorter } from "./types";
 import InputForm from "./components/InputForm/InputForm";
 import styles from "./App.module.css";
 import Header from "./components/Header/Header";
+import DarkThemeProvider from "./context/DarkThemeProvider";
 
 export default function App() {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -33,7 +34,7 @@ export default function App() {
   };
 
   return (
-    <>
+    <DarkThemeProvider>
       <Header
         filter={filter}
         onFilterChange={updateFilter}
@@ -50,6 +51,6 @@ export default function App() {
           sorter={sorter}
         />
       </main>
-    </>
+    </DarkThemeProvider>
   );
 }

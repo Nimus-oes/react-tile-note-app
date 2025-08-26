@@ -1,3 +1,15 @@
+:root {
+  --main-bg: #ffffff;
+}
+
+.darkTheme {
+  --main-bg: #120f1d;
+}
+
+html {
+  background-color: var(--main-bg);
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
