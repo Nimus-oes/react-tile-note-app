@@ -12,7 +12,9 @@
   gap: 10px;
 }
 
-.rightButton {
+.sorterBtn,
+.favBtn,
+.themeBtn {
   width: 30px;
 }
 
@@ -26,7 +28,9 @@
     gap: 10px;
   }
 
-  .rightButton {
+  .sorterBtn,
+  .favBtn,
+  .themeBtn {
     width: 30px;
   }
 }

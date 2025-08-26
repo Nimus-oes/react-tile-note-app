@@ -5,9 +5,9 @@ export default function Header() {
     <header className={styles.container}>
       <div>TileNote</div>
       <div className={styles.rightWrapper}>
-        <button className={styles.rightButton}>↡</button>
-        <button className={styles.rightButton}>⭐️</button>
-        <button className={styles.rightButton}>🌙</button>
+        <button className={styles.sorterBtn}>↡</button>
+        <button className={styles.favBtn}>⭐️</button>
+        <button className={styles.themeBtn}>🌙</button>
       </div>
     </header>
   );
