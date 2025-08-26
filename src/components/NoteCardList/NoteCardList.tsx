@@ -16,7 +16,7 @@ export default function NoteCardList({
   return (
     <ul className={styles.container}>
       {notes.map((note) => (
-        <li key={note.id} className={styles.noteItem}>
+        <li key={note.id}>
           <NoteCard note={note} onDelete={onDelete} onUpdate={onUpdate} />
         </li>
       ))}
