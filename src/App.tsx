@@ -3,6 +3,7 @@ import NoteCardList from "./components/NoteCardList/NoteCardList";
 import type { Note } from "./types";
 import InputForm from "./components/InputForm/InputForm";
 import styles from "./App.module.css";
+import Header from "./components/Header/Header";
 
 export default function App() {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -22,13 +23,16 @@ export default function App() {
   };
 
   return (
-    <main className={styles.main}>
-      <InputForm onAdd={addNote} />
-      <NoteCardList
-        notes={notes}
-        onDelete={deleteNote}
-        onUpdate={setFavorite}
-      />
-    </main>
+    <>
+      <Header />
+      <main className={styles.main}>
+        <InputForm onAdd={addNote} />
+        <NoteCardList
+          notes={notes}
+          onDelete={deleteNote}
+          onUpdate={setFavorite}
+        />
+      </main>
+    </>
   );
 }

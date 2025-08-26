@@ -1,0 +1,32 @@
+.container {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 50px;
+}
+
+.inputField {
+  flex-grow: 1;
+}
+
+.button {
+  flex-basis: 50px;
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    margin-bottom: 100px;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .inputField {
+    width: 70%;
+    flex-grow: 0;
+  }
+
+  .button {
+    flex-basis: 100px;
+  }
+}

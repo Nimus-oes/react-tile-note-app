@@ -1,5 +1,6 @@
 import type { Note } from "../../types";
 import NoteCard from "../NoteCard/NoteCard";
+import styles from "./NoteCardList.module.css";
 
 interface NoteCardListProps {
   notes: Note[];
@@ -13,9 +14,9 @@ export default function NoteCardList({
   onUpdate,
 }: NoteCardListProps) {
   return (
-    <ul>
+    <ul className={styles.container}>
       {notes.map((note) => (
-        <li key={note.id}>
+        <li key={note.id} className={styles.noteItem}>
           <NoteCard note={note} onDelete={onDelete} onUpdate={onUpdate} />
         </li>
       ))}
