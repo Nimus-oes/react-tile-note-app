@@ -1,12 +1,14 @@
 import { useState } from "react";
 import NoteCardList from "./components/NoteCardList/NoteCardList";
-import type { Note } from "./types";
+import type { Note, Filter, Sorter } from "./types";
 import InputForm from "./components/InputForm/InputForm";
 import styles from "./App.module.css";
 import Header from "./components/Header/Header";
 
 export default function App() {
   const [notes, setNotes] = useState<Note[]>([]);
+  const [filter, setFilter] = useState<Filter>("all");
+  const [sorter, setSorter] = useState<Sorter>("desc");
 
   const addNote = (noteToAdd: Note) => {
     setNotes((prev) => [...prev, noteToAdd]);
@@ -22,15 +24,30 @@ export default function App() {
     );
   };
 
+  const updateFilter = (filter: Filter) => {
+    setFilter(filter);
+  };
+
+  const updateSorter = (sorter: Sorter) => {
+    setSorter(sorter);
+  };
+
   return (
     <>
-      <Header />
+      <Header
+        filter={filter}
+        onFilterChange={updateFilter}
+        sorter={sorter}
+        onSorterChange={updateSorter}
+      />
       <main className={styles.main}>
         <InputForm onAdd={addNote} />
         <NoteCardList
           notes={notes}
           onDelete={deleteNote}
           onUpdate={setFavorite}
+          filter={filter}
+          sorter={sorter}
         />
       </main>
     </>
