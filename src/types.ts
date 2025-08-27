@@ -1,4 +1,4 @@
-import type { filters, sortOrders } from "./constants";
+import type { FILTERS, SORTING_ORDERS } from "./constants";
 
 export interface Note {
   id: string;
@@ -8,5 +8,5 @@ export interface Note {
   isFavorite: boolean;
 }
 
-export type Filter = (typeof filters)[number];
-export type Sorter = (typeof sortOrders)[number];
+export type Filter = (typeof FILTERS)[number];
+export type Sorter = (typeof SORTING_ORDERS)[number];
