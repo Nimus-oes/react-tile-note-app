@@ -23,7 +23,6 @@ export default function InputForm({ onAdd }: InputFormProps) {
       id: uuidv4(),
       text,
       createdAt: Date.now(),
-      isArchived: false,
       isFavorite: false,
     });
 
