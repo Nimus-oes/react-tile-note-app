@@ -17,7 +17,7 @@ export default function NoteCard({ note, onDelete, onUpdate }: NoteCardProps) {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ backgroundColor: note.color }}>
       <h1>{note.text}</h1>
       <p>{note.createdAt}</p>
       <button onClick={handleUpdate}>{note.isFavorite ? "★" : "☆"}</button>

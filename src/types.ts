@@ -5,6 +5,7 @@ export interface Note {
   text: string;
   createdAt: number;
   isFavorite: boolean;
+  color: string;
 }
 
 export type Filter = (typeof FILTERS)[number];

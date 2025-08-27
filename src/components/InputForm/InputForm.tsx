@@ -1,12 +1,17 @@
 import type { Note } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./InputForm.module.css";
+import { NOTE_COLORS } from "../../constants";
 
 interface InputFormProps {
   onAdd: (noteToAdd: Note) => void;
 }
 
 export default function InputForm({ onAdd }: InputFormProps) {
+  const getRandomColor = () => {
+    return NOTE_COLORS[Math.floor(Math.random() * NOTE_COLORS.length)];
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -24,6 +29,7 @@ export default function InputForm({ onAdd }: InputFormProps) {
       text,
       createdAt: Date.now(),
       isFavorite: false,
+      color: getRandomColor(),
     });
 
     e.currentTarget.reset();
