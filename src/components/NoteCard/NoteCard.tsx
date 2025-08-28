@@ -16,10 +16,20 @@ export default function NoteCard({ note, onDelete, onUpdate }: NoteCardProps) {
     onUpdate({ ...note, isFavorite: !note.isFavorite });
   };
 
+  const getLocalDate = () => {
+    const date = new Date(note.createdAt);
+    const options: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return date.toLocaleDateString("en-US", options);
+  };
+
   return (
     <div className={styles.container} style={{ backgroundColor: note.color }}>
       <h1>{note.text}</h1>
-      <p>{note.createdAt}</p>
+      <p>{getLocalDate()}</p>
       <button onClick={handleUpdate}>{note.isFavorite ? "★" : "☆"}</button>
       <button onClick={handleDelete}>🗑️</button>
     </div>
