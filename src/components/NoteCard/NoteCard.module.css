@@ -1,8 +1,15 @@
 .container {
   border-radius: 12px;
-  border: 1px solid #000000;
   height: 120px;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottomWrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 769px) {

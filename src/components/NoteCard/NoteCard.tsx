@@ -28,10 +28,14 @@ export default function NoteCard({ note, onDelete, onUpdate }: NoteCardProps) {
 
   return (
     <div className={styles.container} style={{ backgroundColor: note.color }}>
-      <h1>{note.text}</h1>
-      <p>{getLocalDate()}</p>
-      <button onClick={handleUpdate}>{note.isFavorite ? "★" : "☆"}</button>
-      <button onClick={handleDelete}>🗑️</button>
+      <p>{note.text}</p>
+      <div className={styles.bottomWrapper}>
+        <p>{getLocalDate()}</p>
+        <div>
+          <button onClick={handleUpdate}>{note.isFavorite ? "★" : "☆"}</button>
+          <button onClick={handleDelete}>🗑️</button>
+        </div>
+      </div>
     </div>
   );
 }
