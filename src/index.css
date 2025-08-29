@@ -26,8 +26,13 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
+input {
+  font-family: inherit;
+}
+
 button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-family: inherit;
 }

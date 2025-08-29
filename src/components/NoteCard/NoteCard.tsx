@@ -32,7 +32,7 @@ export default function NoteCard({ note, onDelete, onUpdate }: NoteCardProps) {
     <div className={styles.container} style={{ backgroundColor: note.color }}>
       <p className={styles.textWrapper}>{note.text}</p>
       <div className={styles.bottomWrapper}>
-        <p>{getLocalDate()}</p>
+        <p className={styles.date}>{getLocalDate()}</p>
         <div className={styles.btnWrapper}>
           <button onClick={handleUpdate} className={styles.favBtn}>
             {note.isFavorite ? <FaStar /> : <FaRegStar />}

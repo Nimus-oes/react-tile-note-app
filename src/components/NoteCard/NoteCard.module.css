@@ -11,6 +11,8 @@
   overflow-wrap: break-word;
   overflow-y: scroll;
   word-break: keep-all;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .bottomWrapper {
@@ -25,6 +27,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .favBtn,
