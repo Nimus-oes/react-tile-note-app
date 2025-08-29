@@ -1,9 +1,11 @@
 :root {
   --main-bg: #ffffff;
+  --theme-btn: #120f1d;
 }
 
 .darkTheme {
   --main-bg: #120f1d;
+  --theme-btn: #ffffff;
 }
 
 html {
@@ -13,9 +15,14 @@ html {
 * {
   margin: 0;
   box-sizing: border-box;
-  /* border: 1px solid black; */
 }
 
 body {
   width: 100vw;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

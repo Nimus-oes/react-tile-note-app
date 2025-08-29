@@ -11,7 +11,8 @@
 }
 
 .button {
-  flex-basis: 50px;
+  color: var(--theme-btn);
+  font-size: 55px;
 }
 
 @media screen and (min-width: 769px) {
@@ -24,9 +25,5 @@
   .inputField {
     width: 70%;
     flex-grow: 0;
-  }
-
-  .button {
-    flex-basis: 100px;
   }
 }

@@ -17,7 +17,29 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-top: 10px;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.favBtn,
+.delBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favBtn {
+  font-size: 15px;
+}
+
+.delBtn {
+  font-size: 16.5px;
 }
 
 @media screen and (min-width: 769px) {

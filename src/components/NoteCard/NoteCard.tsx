@@ -1,5 +1,7 @@
 import type { Note } from "../../types";
 import styles from "./NoteCard.module.css";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import { MdDeleteOutline } from "react-icons/md";
 
 interface NoteCardProps {
   note: Note;
@@ -31,9 +33,13 @@ export default function NoteCard({ note, onDelete, onUpdate }: NoteCardProps) {
       <p className={styles.textWrapper}>{note.text}</p>
       <div className={styles.bottomWrapper}>
         <p>{getLocalDate()}</p>
-        <div>
-          <button onClick={handleUpdate}>{note.isFavorite ? "★" : "☆"}</button>
-          <button onClick={handleDelete}>🗑️</button>
+        <div className={styles.btnWrapper}>
+          <button onClick={handleUpdate} className={styles.favBtn}>
+            {note.isFavorite ? <FaStar /> : <FaRegStar />}
+          </button>
+          <button onClick={handleDelete} className={styles.delBtn}>
+            <MdDeleteOutline />
+          </button>
         </div>
       </div>
     </div>

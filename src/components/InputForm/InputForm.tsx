@@ -2,6 +2,7 @@ import type { Note } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./InputForm.module.css";
 import { NOTE_COLORS } from "../../constants";
+import { IoMdAddCircle } from "react-icons/io";
 
 interface InputFormProps {
   onAdd: (noteToAdd: Note) => void;
@@ -38,7 +39,9 @@ export default function InputForm({ onAdd }: InputFormProps) {
   return (
     <form onSubmit={handleSubmit} className={styles.container}>
       <input name="text" className={styles.inputField} />
-      <button className={styles.button}>Add</button>
+      <button className={styles.button}>
+        <IoMdAddCircle />
+      </button>
     </form>
   );
 }
