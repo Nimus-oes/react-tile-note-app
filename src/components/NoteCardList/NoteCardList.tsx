@@ -31,7 +31,7 @@ export default function NoteCardList({
         ))}
       </ul>
       {noNotes && (
-        <p className={styles.noNotesMsg}>No notes created. Write a new note!</p>
+        <p className={styles.noNotesMsg}>No notes created. Write a new one!</p>
       )}
     </>
   );
