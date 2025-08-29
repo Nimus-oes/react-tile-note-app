@@ -19,15 +19,21 @@ export default function NoteCardList({
 }: NoteCardListProps) {
   const filteredNotes = getFilteredNotes(notes, filter);
   const sortedNotes = getSortedNotes(filteredNotes, sorter);
+  const noNotes = sortedNotes.length === 0;
 
   return (
-    <ul className={styles.container}>
-      {sortedNotes.map((note) => (
-        <li key={note.id}>
-          <NoteCard note={note} onDelete={onDelete} onUpdate={onUpdate} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className={styles.container}>
+        {sortedNotes.map((note) => (
+          <li key={note.id}>
+            <NoteCard note={note} onDelete={onDelete} onUpdate={onUpdate} />
+          </li>
+        ))}
+      </ul>
+      {noNotes && (
+        <p className={styles.noNotesMsg}>No notes created. Write a new note!</p>
+      )}
+    </>
   );
 }
 
