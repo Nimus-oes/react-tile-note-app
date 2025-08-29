@@ -1,19 +1,19 @@
 :root {
-  --main-bg: #ffffff;
-  --theme-btn: #120f1d;
+  --main-theme: #ffffff;
+  --theme-contrast: #120f1d;
   --light-border: #b8b8b8;
   --add-btn-icon: #ffffff;
   --add-btn-bg: #120f1d;
 }
 
 .darkTheme {
-  --main-bg: #120f1d;
-  --theme-btn: #ffffff;
+  --main-theme: #120f1d;
+  --theme-contrast: #ffffff;
   --add-btn-bg: #255cf4;
 }
 
 html {
-  background-color: var(--main-bg);
+  background-color: var(--main-theme);
 }
 
 * {

@@ -9,6 +9,7 @@
 .noNotesMsg {
   margin-top: 100px;
   text-align: center;
+  color: var(--theme-contrast);
 }
 
 @media screen and (min-width: 769px) {

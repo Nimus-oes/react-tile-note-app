@@ -16,14 +16,14 @@
 .favBtn,
 .themeBtn {
   width: 30px;
-  color: var(--theme-btn);
+  color: var(--theme-contrast);
   font-size: 20px;
 }
 
 .logo {
   font-size: 30px;
   font-weight: 700;
-  color: var(--theme-btn);
+  color: var(--theme-contrast);
 }
 
 @media screen and (min-width: 769px) {
