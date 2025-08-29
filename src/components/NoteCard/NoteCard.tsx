@@ -28,7 +28,7 @@ export default function NoteCard({ note, onDelete, onUpdate }: NoteCardProps) {
 
   return (
     <div className={styles.container} style={{ backgroundColor: note.color }}>
-      <p>{note.text}</p>
+      <p className={styles.textWrapper}>{note.text}</p>
       <div className={styles.bottomWrapper}>
         <p>{getLocalDate()}</p>
         <div>

@@ -7,9 +7,17 @@
   justify-content: space-between;
 }
 
+.textWrapper {
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  word-break: keep-all;
+}
+
 .bottomWrapper {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  padding-top: 10px;
 }
 
 @media screen and (min-width: 769px) {
