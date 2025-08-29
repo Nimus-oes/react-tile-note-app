@@ -20,6 +20,12 @@
   font-size: 20px;
 }
 
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--theme-btn);
+}
+
 @media screen and (min-width: 769px) {
   .container {
     padding: 0 30px;

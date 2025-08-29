@@ -34,7 +34,7 @@ export default function Header({
 
   return (
     <header className={styles.container}>
-      <div>TileNote</div>
+      <div className={styles.logo}>TileNote</div>
       <div className={styles.rightWrapper}>
         <button onClick={handleSorterChange} className={styles.sorterBtn}>
           {sorter === "asc" ? <FaSortAmountDown /> : <FaSortAmountUpAlt />}
