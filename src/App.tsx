@@ -13,6 +13,7 @@ export default function App() {
 
   const addNote = (noteToAdd: Note) => {
     setNotes((prev) => [...prev, noteToAdd]);
+    setFilter("all");
   };
   const deleteNote = (noteId: string) => {
     setNotes(notes.filter((item) => item.id !== noteId));
