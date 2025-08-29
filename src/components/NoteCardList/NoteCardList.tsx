@@ -20,6 +20,10 @@ export default function NoteCardList({
   const filteredNotes = getFilteredNotes(notes, filter);
   const sortedNotes = getSortedNotes(filteredNotes, sorter);
   const noNotes = sortedNotes.length === 0;
+  const noNotesMsg =
+    filter === "fav"
+      ? "No favorites yet."
+      : "No notes created. Write a new one!";
 
   return (
     <>
@@ -30,9 +34,7 @@ export default function NoteCardList({
           </li>
         ))}
       </ul>
-      {noNotes && (
-        <p className={styles.noNotesMsg}>No notes created. Write a new one!</p>
-      )}
+      {noNotes && <p className={styles.noNotesMsg}>{noNotesMsg}</p>}
     </>
   );
 }
