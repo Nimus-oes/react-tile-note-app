@@ -44,7 +44,7 @@ function getFilteredNotes(notes: Note[], filter: Filter) {
 }
 
 function getSortedNotes(notes: Note[], sorter: Sorter) {
-  return notes.sort((a, b) =>
+  return [...notes].sort((a, b) =>
     sorter === "asc" ? a.createdAt - b.createdAt : b.createdAt - a.createdAt,
   );
 }
