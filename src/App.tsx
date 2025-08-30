@@ -16,11 +16,11 @@ export default function App() {
     setFilter("all");
   };
   const deleteNote = (noteId: string) => {
-    setNotes(notes.filter((item) => item.id !== noteId));
+    setNotes((prev) => prev.filter((item) => item.id !== noteId));
   };
   const setFavorite = (noteToUpdate: Note) => {
-    setNotes(
-      notes.map((item) => (item.id === noteToUpdate.id ? noteToUpdate : item)),
+    setNotes((prev) =>
+      prev.map((item) => (item.id === noteToUpdate.id ? noteToUpdate : item)),
     );
   };
   const updateFilter = (filter: Filter) => {
